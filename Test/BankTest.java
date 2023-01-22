@@ -75,13 +75,13 @@ public class BankTest {
     @Test
     void testThatWrongPinThrowsError(){
         bank.createAccount("Marvins","1111");
-        bank.withdraw("1","2222",3000);
+        bank.withdraw("1","1111",3000);
         assertThrows(InvalidPinException.class, ()->bank.withdraw("1","2001",1500));
     }
     @Test
     void testThatNegativeAmountCannotBrWithdraw(){
         bank.createAccount("Harvey","5555");
-        bank.withdraw("1","5555",-5000);
+        bank.withdraw("1","5555",5000);
         assertThrows(InvalidAmountException.class, ()->bank.withdraw("1","5555",-5000));
     }
 
